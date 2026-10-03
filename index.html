@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thomas Bonnefoy — Développeur &amp; administrateur systèmes</title>
+<meta name="description" content="Étudiant en 2ᵉ année de BUT Informatique à l'IUT Lyon 1. Développement web, Linux, réseaux, systèmes embarqués et auto-hébergement.">
+<meta name="author" content="Thomas Bonnefoy">
+<meta property="og:title" content="Thomas Bonnefoy — Portfolio">
+<meta property="og:description" content="Développement web, Linux, réseaux et auto-hébergement.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<aside class="side">
+  <div>
+    <a class="brand" href="#accueil">Thomas Bonnefoy</a>
+    <nav aria-label="Navigation principale">
+      <a href="#projets">Projets</a>
+      <a href="#competences">Compétences</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="side-foot">
+    <dl>
+      <dt>Localisation</dt><dd>Bourg-en-Bresse, France</dd>
+      <dt>Email</dt><dd><a href="mailto:thomas.bonnefoy14@gmail.com">thomas.bonnefoy14@gmail.com</a></dd>
+      <dt>Langues</dt><dd>Français, anglais (B2)</dd>
+    </dl>
+    <button id="theme" type="button">Mode sombre</button>
+  </div>
+</aside>
+
+<main id="main">
+
+<section class="hero" id="accueil">
+  <h1>Thomas Bonnefoy</h1>
+  <p class="role">Développement web, Linux, réseaux, systèmes embarqués</p>
+  <p class="lead">Étudiant en <strong>2ᵉ année de BUT Informatique</strong> à l'IUT Lyon&nbsp;1, site de Bourg-en-Bresse. J'aime apprendre en réalisant des projets concrets et en comprenant le fonctionnement des technologies que j'utilise, du protocole au serveur.</p>
+  <p class="status">Je recherche un stage en développement du 12 avril au 10 juin 2027.</p>
+  <div class="actions">
+    <a class="btn" href="#projets">Voir mes projets</a>
+    <a class="btn ghost" href="https://github.com/ThomasBonnefoy" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn ghost" href="assets/cv-thomas-bonnefoy.pdf" download>Télécharger le CV</a>
+  </div>
+</section>
+
+<section id="projets">
+  <h2>Projets</h2>
+  <p class="intro">Projets personnels et projets menés en équipe dans le cadre du BUT Informatique.</p>
+  <div class="filters" role="group" aria-label="Filtrer les projets">
+    <button type="button" data-f="all" aria-pressed="true">Tous</button>
+    <button type="button" data-f="perso" aria-pressed="false">Personnels</button>
+    <button type="button" data-f="scolaire" aria-pressed="false">Universitaires</button>
+    <button type="button" data-f="web" aria-pressed="false">Web</button>
+    <button type="button" data-f="embarque" aria-pressed="false">Embarqué</button>
+    <button type="button" data-f="infra" aria-pressed="false">Infrastructure</button>
+  </div>
+
+  <article class="row proj" data-cats="perso embarque">
+    <div><h3>XmRip</h3><span class="tag">Open source, MIT</span></div>
+    <div>
+      <p>Application Android qui remplace Sony Sound Connect pour piloter le casque WH-1000XM6. Le protocole propriétaire <strong>MDR v2</strong> est implémenté depuis zéro : socket RFCOMM Bluetooth, trames <code>0x3E</code>/<code>0x3C</code> avec échappement, checksum et acquittement, handshake complet avant toute commande. Aucune dépendance externe, interface 100&nbsp;% programmatique.</p>
+      <ul class="techs"><li>C++</li><li>Kotlin</li><li>CMake</li><li>Android</li><li>Bluetooth</li></ul>
+      <a href="https://github.com/ThomasBonnefoy/XmRip" target="_blank" rel="noopener">Code source</a>
+    </div>
+  </article>
+
+  <article class="row proj" data-cats="perso infra">
+    <div><h3>Homelab</h3><span class="tag">Privé</span></div>
+    <div>
+      <p>Infrastructure personnelle auto-hébergée sur un Dell Inspiron (Intel N5030, 8&nbsp;Go) sous Debian et Docker. Une vingtaine de services derrière un reverse proxy Caddy, accès distant par Tailscale, supervision Beszel (CPU, RAM, températures, SMART), alertes ntfy, sauvegardes automatiques sur disque externe en <code>rsync</code> + hardlinks. Le dépôt documente chaque service sous forme de skills réutilisables.</p>
+      <ul class="techs"><li>Linux</li><li>Docker</li><li>Caddy</li><li>Tailscale</li><li>ntfy</li><li>Beszel</li></ul>
+      <a href="https://github.com/ThomasBonnefoy?tab=repositories" target="_blank" rel="noopener">Dépôts</a>
+    </div>
+  </article>
+
+  <article class="row proj" data-cats="scolaire embarque">
+    <div><h3>ESP32 Wireless Pong</h3><span class="tag">Projet de groupe</span></div>
+    <div>
+      <p>Jeu Pong entre deux microcontrôleurs ESP32 communiquant directement, sans routeur ni serveur, grâce au protocole <strong>ESP-NOW</strong>. Architecture Maître/Esclave synchronisée en temps réel, écran OLED, joystick et retour sonore via buzzer. Ma contribution : moteur physique et collisions, IA du mode solo, ergonomie et menus.</p>
+      <ul class="techs"><li>C++</li><li>ESP32</li><li>ESP-NOW</li><li>OLED</li><li>I²C</li></ul>
+      <a href="https://github.com/ThomasBonnefoy/ESP32-Wireless-Pong" target="_blank" rel="noopener">Code source</a>
+    </div>
+  </article>
+
+  <article class="row proj" data-cats="scolaire web">
+    <div><h3>Génération automatisée de cartes étudiantes</h3><span class="tag">Projet de groupe</span></div>
+    <div>
+      <p>Outil en ligne de commande qui automatise toute la chaîne de production des supports de communication des Journées Portes Ouvertes : parcours et upload des sites étudiants, récupération des URL publiques, génération des QR codes puis des cartes étudiantes au format SVG à partir d'un template. Passage d'une production manuelle à un pipeline reproductible.</p>
+      <ul class="techs"><li>Node.js</li><li>SVG</li><li>QR Code</li><li>CLI</li></ul>
+      <a href="https://github.com/ThomasBonnefoy/Generation-automatisee-de-cartes-etudiantes" target="_blank" rel="noopener">Code source</a>
+    </div>
+  </article>
+
+  <article class="row proj" data-cats="scolaire web">
+    <div><h3>Site web d'apprentissage du dessin</h3><span class="tag">Projet de groupe</span></div>
+    <div>
+      <p>Site web réalisé en mise en situation professionnelle pour une boutique de matériel artistique fictive : analyse des besoins, analyse concurrentielle, personas, puis zoning, wireframes et charte graphique avant le développement des 11 pages. Ma contribution : les pages emploi du temps, conseils/location et liens vers les exercices, les plus denses en contenu.</p>
+      <ul class="techs"><li>HTML</li><li>CSS</li><li>Wireframing</li></ul>
+      <a href="https://github.com/ThomasBonnefoy/Site-web-d-apprentissage-du-dessin" target="_blank" rel="noopener">Code source</a>
+    </div>
+  </article>
+
+  <article class="row proj" data-cats="scolaire">
+    <div><h3>Geo France, quiz de géographie</h3><span class="tag">Projet de groupe</span></div>
+    <div>
+      <p>Application interactive de quiz de géographie construite autour de la carte SVG de la France métropolitaine : exploration libre des départements, questions par clic direct, quiz d'images et reconstitution de la carte en mode puzzle. Ma contribution : gestion de la carte, mode puzzle et conception de l'interface.</p>
+      <ul class="techs"><li>Processing</li><li>Java</li><li>SVG</li><li>PShape</li></ul>
+      <a href="https://github.com/ThomasBonnefoy/Geo-France-Quiz-de-geographie" target="_blank" rel="noopener">Code source</a>
+    </div>
+  </article>
+
+  <article class="row proj" data-cats="perso web">
+    <div><h3>Dragon Ball Super, site de référence</h3><span class="tag">Personnel</span></div>
+    <div>
+      <p>Site statique de référencement des publications, né d'un exercice de HTML au lycée et sans arrêt transformé en terrain d'apprentissage : chaque nouvelle compétence acquise est appliquée ici. Projet non commercial, sans lien avec l'éditeur.</p>
+      <ul class="techs"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+      <a href="https://github.com/ThomasBonnefoy/chapitre_dragon_ball_super" target="_blank" rel="noopener">Code source</a>
+    </div>
+  </article>
+</section>
+
+<section id="competences">
+  <h2>Compétences</h2>
+  <p class="intro">Domaines sur lesquels je travaille au quotidien, en cours comme en autonomie.</p>
+
+  <div class="row">
+    <h3>Développement web</h3>
+    <div><ul class="techs"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Node.js</li><li>SVG</li><li>QR Code</li></ul>
+    <p>Interfaces statiques, tableaux de bord, pipelines d'automatisation en CLI.</p></div>
+  </div>
+  <div class="row">
+    <h3>Programmation</h3>
+    <div><ul class="techs"><li>C++</li><li>Java</li><li>Kotlin</li><li>Python</li><li>Bash</li><li>Processing</li></ul>
+    <p>Programmation orientée objet, structures de données, code maintenable et versionné.</p></div>
+  </div>
+  <div class="row">
+    <h3>Systèmes &amp; infrastructure</h3>
+    <div><ul class="techs"><li>Linux</li><li>Docker</li><li>systemd</li><li>Caddy</li><li>Samba</li><li>rsync</li></ul>
+    <p>Administration d'un serveur Linux, conteneurisation, reverse proxy, sauvegardes.</p></div>
+  </div>
+  <div class="row">
+    <h3>Réseaux</h3>
+    <div><ul class="techs"><li>TCP/IP</li><li>IPv4</li><li>DHCP</li><li>RIP</li><li>NAT</li><li>VLAN</li><li>Tailscale</li></ul>
+    <p>Adressage, segmentation, exposition de services et maillage d'accès distant.</p></div>
+  </div>
+  <div class="row">
+    <h3>Embarqué &amp; protocole</h3>
+    <div><ul class="techs"><li>ESP32</li><li>Arduino</li><li>Raspberry Pi</li><li>ESP-NOW</li><li>Bluetooth</li><li>I²C</li></ul>
+    <p>Microcontrôleurs, bus série, trames binaires et inversion de protocoles constructeur.</p></div>
+  </div>
+  <div class="row">
+    <h3>Outils</h3>
+    <div><ul class="techs"><li>Git</li><li>GitHub</li><li>CMake</li><li>VS Code</li><li>Wireshark</li></ul>
+    <p>Gestion de version en équipe, build multi-cible, analyse de trafic réseau.</p></div>
+  </div>
+</section>
+
+<section id="parcours">
+  <h2>Parcours</h2>
+  <p class="intro">Formation et expérience professionnelle.</p>
+  <ol class="timeline">
+    <li class="row">
+      <time>2024 → aujourd'hui</time>
+      <div><h3>BUT Informatique, 2ᵉ année</h3><p class="org">IUT Lyon 1, Bourg-en-Bresse</p>
+      <p>Parcours réalisation d'applications : conception, développement, validation. Projets tutorés en équipe, six compétences du référentiel évaluées en contrôle continu.</p></div>
+    </li>
+    <li class="row">
+      <time>2024</time>
+      <div><h3>Baccalauréat STI2D</h3><p class="org">Lycée Aragon Picasso, Givors</p>
+      <p>Sciences et technologies de l'industrie et du développement durable, spécialité Systèmes d'information et numérique.</p></div>
+    </li>
+  </ol>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Parlons de votre projet</h2>
+  <p class="lead">Je recherche un stage en développement du <strong>12 avril au 10 juin 2027</strong>, à l'aise en Linux, en réseau et en développement web, et qui aime comprendre comment les choses marchent vraiment. Écrivez-moi, je réponds vite.</p>
+  <div class="actions">
+    <a class="btn" href="mailto:thomas.bonnefoy14@gmail.com">thomas.bonnefoy14@gmail.com</a>
+    <a class="btn ghost" href="https://github.com/ThomasBonnefoy" target="_blank" rel="noopener">Voir GitHub</a>
+    <a class="btn ghost" href="assets/cv-thomas-bonnefoy.pdf" download>Télécharger le CV</a>
+  </div>
+</section>
+
+<footer>Thomas Bonnefoy — IUT Lyon 1, Bourg-en-Bresse</footer>
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>
