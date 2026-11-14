@@ -6,6 +6,8 @@ Le site présente mon parcours, mes compétences, mes projets universitaires et 
 
 **Site en ligne :** [thomasbonnefoy.github.io](https://thomasbonnefoy.github.io)
 
+[![Aperçu du portfolio de Thomas Bonnefoy sur ordinateur](docs/images/apercu-bureau.png)](https://thomasbonnefoy.github.io)
+
 ## Technologies
 
 * HTML5
